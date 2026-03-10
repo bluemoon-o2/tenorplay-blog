@@ -1,4 +1,10 @@
 {
+  "framework": "hugo",
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.157.0"
+    }
+  },
   "routes": [
     { "handle": "filesystem" },
     { "src": "/zh/(.*)", "dest": "/zh/404.html", "status": 404 },
