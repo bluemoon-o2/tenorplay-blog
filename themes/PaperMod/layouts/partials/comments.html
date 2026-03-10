@@ -1,0 +1,41 @@
+{{- /* Twikoo Comments */ -}}
+<div id="tcomment"></div>
+<script src="https://registry.npmmirror.com/twikoo/1.7.2/files/dist/twikoo.min.js"></script>
+<script>
+twikoo.init({
+  envId: '{{ .Site.Params.twikoo.envId }}', 
+  el: '#tcomment', 
+  lang: '{{ .Lang }}', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
+  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai，Vercel 环境不填
+  // path: '{{ .Permalink }}', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+})
+</script>
+
+<style>
+    /* Twikoo 样式微调，适配 PaperMod */
+    #tcomment {
+        padding: 20px;
+        background: var(--entry);
+        border-radius: var(--radius);
+        margin-top: 20px;
+        box-shadow: var(--shadow);
+    }
+    
+    .tk-content {
+        color: var(--primary) !important;
+    }
+    
+    .tk-meta-input .el-input__inner {
+        background: var(--code-bg) !important;
+        color: var(--primary) !important;
+        border-color: var(--border) !important;
+    }
+    
+    .tk-submit-action-icon {
+        color: var(--primary) !important;
+    }
+    
+    .dark .tk-content p {
+        color: #ddd !important;
+    }
+</style>

@@ -1,0 +1,16 @@
+<!-- layouts/partials/mathjax.html -->
+<script>
+  window.MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  // 块级公式定界符              
+      inlineMath: [['$', '$'], ['\\(', '\\)']] // 行内公式定界符
+    },
+    svg: {
+      fontCache: 'global'
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>

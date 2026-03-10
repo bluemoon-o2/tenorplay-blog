@@ -1,0 +1,52 @@
+{{- /* Unified RSS Template for Multilingual Site */ -}}
+{{- $pctx := . -}}
+{{- if .IsHome }}{{ $pctx = site }}{{ end -}}
+{{- $pages := slice -}}
+
+{{- /* Collect all regular pages from all languages */ -}}
+{{- range site.Sites -}}
+  {{- $pages = $pages | append .RegularPages -}}
+{{- end -}}
+
+{{- /* Filter out non-content pages like archives/search */ -}}
+{{- $pages = where $pages "Layout" "ne" "search" -}}
+{{- $pages = where $pages "Layout" "ne" "archives" -}}
+
+{{- /* Sort by date */ -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+
+{{- /* Limit results */ -}}
+{{- $limit := site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+  {{- $pages = $pages | first $limit -}}
+{{- end -}}
+
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }}</title>
+    <link>{{ site.BaseURL }}</link>
+    <description>Recent content on {{ site.Title }}</description>
+    <generator>Hugo -- {{ hugo.Version }}</generator>
+    <language>{{ site.LanguageCode }}</language>
+    {{- with site.Copyright }}
+    <copyright>{{ . | markdownify | plainify | strings.TrimPrefix "© " }}</copyright>
+    {{- end }}
+    {{- if not .Date.IsZero }}
+    <lastBuildDate>{{ (index $pages 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{- end }}
+    
+    {{- /* Output the atom link correctly */ -}}
+    <atom:link href="{{ "index.xml" | absURL }}" rel="self" type="application/rss+xml" />
+
+    {{- range $pages }}
+    <item>
+      <title>{{ if eq .Lang "en" }}[EN] {{ end }}{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ with .Description | html }}{{ . }}{{ else }}{{ .Summary | html }}{{ end -}}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

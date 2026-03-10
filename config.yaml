@@ -1,0 +1,365 @@
+baseURL: "https://blog.tensorplay.cn"
+title: "TensorPlay Blog"
+pagination:
+  pagerSize: 5
+theme: ["PaperMod"]
+
+# Default Language Code
+languageCode: "zh-cn"
+defaultContentLanguage: "zh"
+defaultContentLanguageInSubdir: true
+publishDir: "public"
+
+# Site build options
+enableGitInfo: false
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableInlineShortcodes: true
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "papermod"]
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# disableKinds:
+#  - RSS
+
+googleAnalytics: "G-SZ2660B91F"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+rss:
+  limit: 20
+  filename: "index.xml"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Math & Markup
+# ──────────────────────────────────────────────────────────────────────────────
+markup:
+  tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 2
+  goldmark:
+    duplicateResourceFiles: false
+    extensions:
+      cjk:
+        eastAsianLineBreaks: false
+        eastAsianLineBreaksStyle: simple
+        enable: false
+        escapedSpace: false
+      definitionList: true
+      extras:
+        delete:
+          enable: false
+        insert:
+          enable: false
+        mark:
+          enable: false
+        subscript:
+          enable: false
+        superscript:
+          enable: false
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+        enable: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer:
+        apostrophe: '&rsquo;'
+        disable: false
+        ellipsis: '&hellip;'
+        emDash: '&mdash;'
+        enDash: '&ndash;'
+        leftAngleQuote: '&laquo;'
+        leftDoubleQuote: '&ldquo;'
+        leftSingleQuote: '&lsquo;'
+        rightAngleQuote: '&raquo;'
+        rightDoubleQuote: '&rdquo;'
+        rightSingleQuote: '&rsquo;'
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderHooks:
+      image:
+        useEmbedded: "never"
+      link:
+        useEmbedded: "never"
+    renderer:
+      hardWraps: false
+      unsafe: false
+      xhtml: false
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Multilingual Configuration
+# ──────────────────────────────────────────────────────────────────────────────
+languages:
+  en:
+    languageName: "English"
+    weight: 2
+    contentDir: "content/en"
+    languageCode: "en-us"
+    title: "TensorPlay Blog"
+
+    params:
+      fancybox: true
+      math: true
+      env: production
+      title: "TensorPlay Blog"
+      description: "TensorPlay's technical blog exploring cutting-edge LLM technologies and research papers, with a focus on models, algorithms, and engineering."
+      keywords: [Blog, Portfolio, PaperMod]
+      author: "TensorPlay Team"
+
+      images: []
+
+      assets:
+        favicon: "/images/avator.png"
+        favicon16x16: "/images/avator.png"
+        favicon32x32: "/images/avator.png"
+        apple_touch_icon: "/images/avator.png"
+        safari_pinned_tab: "/images/avator.png"
+
+      DateFormat: "2006-01-02"
+      ShowLastMod: true
+      ShowLastModInList: true
+
+      defaultTheme: auto
+      disableThemeToggle: false
+
+      ShowReadingTime: true
+      ShowWordCount: true
+      ShowShareButtons: true
+      ShowPostNavLinks: true
+      ShowBreadCrumbs: true
+      ShowCodeCopyButtons: true
+      ShowRssButtonInSectionTermList: true
+      UseHugoToc: true
+      showtoc: true
+      tocopen: false
+      disableSpecial1stPost: false
+      disableScrollToTop: false
+      comments: true
+      hidemeta: false
+      hideSummary: false
+
+      label:
+        text: "Home"
+        icon: /images/avator.png
+        iconHeight: 35
+
+      profileMode:
+        enabled: true
+        title: "TensorPlay Team"
+        subtitle: "Exploring cutting-edge LLM technologies and research papers."
+        imageUrl: "/images/logo.png"
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: "TensorPlay Logo"
+        buttons:
+          - name: "Posts"
+            url: "posts"
+          - name: "Tags"
+            url: "tags"
+
+      homeInfoParams:
+        Title: "👋 Welcome to TensorPlay's blog"
+        Content: "Hi, this is TensorPlay. I’m currently working on LLM algorithms, with a focus on infra. My interests include model training, RAG, and LLM Agent. Feel free to connect!"
+
+      socialIcons:
+        - name: github
+          url: "https://github.com/bluemoon-o2"
+        - name: zhihu
+          url: "https://www.zhihu.com/people/jian-ke-ui"
+        - name: rss
+          url: "/rss-guide/"
+        - name: email
+          url: "mailto:zlx@tensorplay.cn"
+
+      analytics:
+        google:
+          SiteVerificationTag: "XYZabc"
+        bing:
+          SiteVerificationTag: "XYZabc"
+        yandex:
+          SiteVerificationTag: "XYZabc"
+
+      cover:
+        hidden: true
+        hiddenInList: true
+        hiddenInSingle: true
+
+      fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        limit: 10
+        keys: ["title", "permalink", "summary", "content"]
+
+      contact:
+        email: "zlx@tensorplay.cn"
+
+    menu:
+      main:
+        - name: Archive
+          url: archives/
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: tags/
+          weight: 20
+
+  zh:
+    languageName: "简体中文"
+    weight: 1
+    contentDir: "content/zh"
+    languageCode: "zh-cn"
+    title: "TensorPlay 博客"
+    hasCJKLanguage: true
+
+    params:
+      fancybox: true
+      math: true
+      env: production
+      title: "TensorPlay 博客"
+      description: "TensorPlay 的个人博客，专注前沿 LLM 技术与研究论文分享，关注模型、算法与工程。"
+      keywords: [博客, 作品集, PaperMod]
+      author: "TensorPlay Team"
+
+      images: []
+
+      assets:
+        favicon: "/images/avator.png"
+        favicon16x16: "/images/avator.png"
+        favicon32x32: "/images/avator.png"
+        apple_touch_icon: "/images/avator.png"
+        safari_pinned_tab: "/images/avator.png"
+        disableFingerprinting: true  # 禁用指纹以强制刷新缓存
+
+      DateFormat: "2006-01-02"
+      ShowLastMod: true
+      ShowLastModInList: true
+
+      defaultTheme: auto
+      disableThemeToggle: false
+
+      ShowReadingTime: true
+      ShowWordCount: true
+      ShowShareButtons: true
+      ShowPostNavLinks: true
+      ShowBreadCrumbs: true
+      ShowCodeCopyButtons: true
+      ShowRssButtonInSectionTermList: true
+      UseHugoToc: true
+      showtoc: true
+      tocopen: false
+      disableSpecial1stPost: false
+      disableScrollToTop: false
+      # Twikoo Comments Configuration
+      comments: true
+      twikoo:
+        envId: "https://blog.tensorplay.cn"
+        region: ""
+      hidemeta: false
+      hideSummary: false
+
+      label:
+        text: "首页"
+        icon: /images/avator.png
+        iconHeight: 35
+
+      profileMode:
+        enabled: true
+        title: "TensorPlay 团队"
+        subtitle: "专注前沿 LLM 技术与研究论文分享。"
+        imageUrl: "/images/logo.png"
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: "TensorPlay 团队头像"
+        buttons:
+          - name: "文章"
+            url: "posts"
+          - name: "标签"
+            url: "tags"
+
+      homeInfoParams:
+        Title: "👋 欢迎访问我的博客"
+        Content: "嗨，这里是TensorPlay。目前正在研究大语言模型算法，重点关注基础设施方面。我的兴趣包括模型训练、RAG和Agent。欢迎联系我！"
+
+      socialIcons:
+        - name: github
+          url: "https://github.com/bluemoon-o2"
+        - name: zhihu
+          url: "https://www.zhihu.com/people/jian-ke-ui"
+        - name: rss
+          url: rss-guide/
+        - name: email
+          url: "mailto:zlx@tensorplay.cn"
+
+      analytics:
+        google:
+          SiteVerificationTag: "XYZabc"
+        bing:
+          SiteVerificationTag: "XYZabc"
+        yandex:
+          SiteVerificationTag: "XYZabc"
+
+      cover:
+        hidden: true
+        hiddenInList: true
+        hiddenInSingle: true
+
+      fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        limit: 10
+        keys: ["title", "permalink", "summary", "content"]
+
+      contact:
+        email: "zlx@tensorplay.cn"
+
+    menu:
+      main:
+        - name: 归档
+          url: archives/
+          weight: 5
+        - name: 搜索
+          url: search/
+          weight: 10
+        - identifier: tags
+          name: 标签
+          url: tags/
+          weight: 20
