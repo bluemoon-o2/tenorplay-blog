@@ -287,7 +287,7 @@ languages:
       # Twikoo Comments Configuration
       comments: true
       twikoo:
-        envId: "https://blog.tensorplay.cn"
+        envId: "https://tensorplay-twikoo.netlify.app/.netlify/functions/twikoo"
         region: ""
       hidemeta: false
       hideSummary: false
