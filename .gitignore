@@ -1,6 +1,7 @@
 # Hugo 构建产物
 public/
 resources/
+scripts/
 _vendor/
 
 # Hugo 缓存

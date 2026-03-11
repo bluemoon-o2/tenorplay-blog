@@ -5,9 +5,13 @@
 twikoo.init({
   envId: '{{ .Site.Params.twikoo.envId }}', 
   el: '#tcomment', 
-  lang: '{{ .Lang }}', // 用于手动设定评论区语言，支持的语言列表 https://github.com/imaegoo/twikoo/blob/main/src/client/utils/i18n/index.js
-  // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai，Vercel 环境不填
-  // path: '{{ .Permalink }}', // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+  lang: '{{ .Lang }}',
+  // region: 'ap-guangzhou', 
+  // path: '{{ .Permalink }}', 
+  onImageUploaded: function (originalUrl) {
+    return originalUrl.replace('https://image.tensorplay.cn/blog', 'https://ik.imagekit.io/nwbaln7ps/tr:l-text,ie-VGVuc29yUGxheSBCbG9n,lx-bw_mul_0.7,ly-bh_mul_0.9,lm-cutout,co-FFFFFF50,tg-i,fs-bh_div_15,ff-Amaranth,l-end/')
+    return originalUrl;
+  }
 })
 </script>
 
