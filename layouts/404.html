@@ -2,12 +2,11 @@
 <div class="not-found" style="display: flex; align-items: center; justify-content: center; min-height: 60vh; text-align: center;">
     <div class="not-found-content">
         <h1 class="error-code" style="font-size: 120px; margin: 0; background: linear-gradient(135deg, var(--primary), #666); -webkit-background-clip: text; -webkit-fill-color: transparent; opacity: 0.8;">404</h1>
-        <h2 class="error-message" style="margin: 20px 0; font-size: 24px;">页面未找到 / Page Not Found</h2>
+        <h2 class="error-message" style="margin: 20px 0; font-size: 24px;">{{ T "404_title" }}</h2>
         <p class="error-description" style="margin-bottom: 40px; opacity: 0.7;">
-            抱歉，您访问的页面不存在或已被移除。<br>
-            Sorry, the page you are looking for does not exist.
+            {{ T "404_text" }}
         </p>
-        <a class="btn-home" href="{{ "" | absLangURL }}" style="display: inline-block; padding: 10px 25px; background: var(--primary); color: #fff; border-radius: 5px; text-decoration: none;">返回首页 / Back Home</a>
+        <a class="btn-home" href="{{ "" | absLangURL }}" style="display: inline-block; padding: 10px 25px; background: var(--primary); color: #fff; border-radius: 5px; text-decoration: none;">{{ T "404_home" }}</a>
     </div>
 </div>
 {{- end }}

@@ -7,7 +7,7 @@
   },
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/zh/(.*)", "dest": "/zh/404.html", "status": 404 },
-    { "src": "/(.*)", "dest": "/404.html", "status": 404 }
+    { "src": "/en/.*", "dest": "/en/404.html", "status": 404 },
+    { "src": "/.*", "dest": "/zh/404.html", "status": 404 }
   ]
 }

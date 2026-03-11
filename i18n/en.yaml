@@ -1,0 +1,6 @@
+- id: 404_title
+  translation: "Page Not Found"
+- id: 404_text
+  translation: "Sorry, the page you are looking for does not exist."
+- id: 404_home
+  translation: "Back Home"
