@@ -6,6 +6,8 @@ _vendor/
 
 # Hugo 缓存
 .hugo_build.lock
+*.js
+*.toml
 
 # 操作系统文件
 .DS_Store
