@@ -11,7 +11,7 @@ RSS (Really Simple Syndication) is a technology that allows you to get the lates
 
 1. **Copy the RSS feed link**:
   ```
-  https://blog.tensorplay.cn/index.xml
+  https://blog.tensorplay.cn/en/index.xml
   ```
 
 2. **Add to reader**:

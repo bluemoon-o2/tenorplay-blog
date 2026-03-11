@@ -11,7 +11,7 @@ RSS (Really Simple Syndication) 是一种让你无需反复访问网站就能获
 
 1. **复制RSS 订阅链接**：
   ```
-  https://blog.tensorplay.cn/index.xml
+  https://blog.tensorplay.cn/zh/index.xml
   ```
 
 2. **添加到阅读器**：
