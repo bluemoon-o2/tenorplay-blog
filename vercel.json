@@ -5,6 +5,17 @@
       "HUGO_VERSION": "0.157.0"
     }
   },
+  "headers": [
+    {
+      "source": "/(.*).md",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/en/.*", "dest": "/en/404.html", "status": 404 },

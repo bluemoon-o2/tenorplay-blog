@@ -4,7 +4,9 @@
 {{- $pages := slice -}}
 
 {{- /* Collect regular pages from current language */ -}}
-{{- if or .IsHome .IsSection -}}
+{{- if .IsHome -}}
+  {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- else if .IsSection -}}
   {{- $pages = $pctx.RegularPages -}}
 {{- else -}}
   {{- $pages = $pctx.Pages -}}

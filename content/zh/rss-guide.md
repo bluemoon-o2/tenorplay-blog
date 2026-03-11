@@ -21,4 +21,4 @@ RSS (Really Simple Syndication) 是一种让你无需反复访问网站就能获
 - **在线平台**：[Feedly](https://feedly.com), [Inoreader](https://www.inoreader.com)
 - **苹果生态**：[NetNewsWire](https://netnewswire.com), [Reeder](https://reederapp.com)
 - **Windows**：[Fluent Reader](https://github.com/yang991178/fluent-reader)
-- **浏览器扩展**：[RSS Feed Reader](https://rssfeedreader.com)
+- **浏览器扩展**：[Feeder](https://feeder.co)

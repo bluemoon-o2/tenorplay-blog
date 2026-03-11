@@ -21,4 +21,4 @@ RSS (Really Simple Syndication) is a technology that allows you to get the lates
 - **Online Platforms**: [Feedly](https://feedly.com), [Inoreader](https://www.inoreader.com)
 - **Apple Ecosystem**: [NetNewsWire](https://netnewswire.com), [Reeder](https://reederapp.com)
 - **Windows**: [Fluent Reader](https://github.com/yang991178/fluent-reader)
-- **Browser Extension**: [RSS Feed Reader](https://rssfeedreader.com)
+- **Browser Extension**: [Feeder](https://feeder.co)

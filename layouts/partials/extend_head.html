@@ -5,6 +5,10 @@
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
 {{ end }}
 
+{{- with .OutputFormats.Get "AI" }}
+<link rel="alternate" type="text/markdown" href="{{ .Permalink }}" title="Markdown Source" />
+{{- end }}
+
 {{- /* Head custom content area start */ -}}
 {{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
 {{- /* Head custom content area end */ -}}

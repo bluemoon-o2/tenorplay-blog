@@ -25,16 +25,21 @@ minify:
   disableXML: true
   minifyOutput: true
 
-# disableKinds:
-#  - RSS
-
-googleAnalytics: "G-SZ2660B91F"
+outputFormats:
+  AI:
+    mediaType: "text/markdown"
+    baseName: "index"
+    isPlainText: true
+    suffix: "md"
 
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+  page:
+    - HTML
+    - AI
 
 rss:
   limit: 20
@@ -200,12 +205,10 @@ languages:
           url: "mailto:zlx@tensorplay.cn"
 
       analytics:
-        google:
-          SiteVerificationTag: "XYZabc"
         bing:
-          SiteVerificationTag: "XYZabc"
+          SiteVerificationTag: "83EC02716F23E00E1D3E5CA9529A0E12"
         yandex:
-          SiteVerificationTag: "XYZabc"
+          SiteVerificationTag: "df7eea251aeabc7d"
 
       cover:
         hidden: true
@@ -326,12 +329,10 @@ languages:
           url: "mailto:zlx@tensorplay.cn"
 
       analytics:
-        google:
-          SiteVerificationTag: "XYZabc"
         bing:
-          SiteVerificationTag: "XYZabc"
+          SiteVerificationTag: "83EC02716F23E00E1D3E5CA9529A0E12"
         yandex:
-          SiteVerificationTag: "XYZabc"
+          SiteVerificationTag: "df7eea251aeabc7d"
 
       cover:
         hidden: true
