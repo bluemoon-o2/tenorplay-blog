@@ -168,6 +168,9 @@ languages:
       disableSpecial1stPost: false
       disableScrollToTop: false
       comments: true
+      twikoo:
+        envId: "https://tensorplay-twikoo.netlify.app/.netlify/functions/twikoo"
+        region: ""
       hidemeta: false
       hideSummary: false
 
