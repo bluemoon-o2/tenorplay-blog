@@ -1,5 +1,7 @@
 {{- $scratch := newScratch }}
 
+{{- $scratch.Add "meta" (slice (printf "<span title='Page views'>Views: <span id='twikoo_visitors'>0</span></span>")) }}
+
 {{- if not .Date.IsZero -}}
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>Created:&nbsp;%s</span>" (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}
 {{- end }}
@@ -31,5 +33,3 @@
     &nbsp;·&nbsp;<a href="{{ .RelPermalink }}" target="_blank">🤖 AI</a>
   {{- end -}}
 {{- end -}}
-
-&nbsp;·&nbsp;<span title="Page views"><span id="twikoo_visitors">0</span> views</span>
