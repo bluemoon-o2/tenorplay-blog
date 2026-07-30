@@ -181,7 +181,7 @@ languages:
 
       profileMode:
         enabled: true
-        title: "TensorPlay Team"
+        title: "TensorPlay"
         subtitle: "Exploring cutting-edge LLM technologies and research papers."
         imageUrl: "/images/logo.png"
         imageWidth: 120
@@ -305,7 +305,7 @@ languages:
 
       profileMode:
         enabled: true
-        title: "TensorPlay 团队"
+        title: "TensorPlay"
         subtitle: "专注前沿 LLM 技术与研究论文分享。"
         imageUrl: "/images/logo.png"
         imageWidth: 120
